@@ -1,1 +1,0 @@
-# adambarnes917.github.io
