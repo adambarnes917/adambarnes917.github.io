@@ -11,7 +11,6 @@ header{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    padding: 30px;
 }
 header a{
     text-decoration: none;
@@ -49,4 +48,19 @@ hr{
     border-top: 1px solid #ccc;
     width: 80%;
     margin-left: auto;
+}
+img{
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+figcaption{
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.9em;
 }
