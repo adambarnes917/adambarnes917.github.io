@@ -6,55 +6,91 @@
     <title>Barnes Design | Web Design Company</title>
     <link rel="stylesheet" href="../styles/firm.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            color: #222;
+        }
+        header {
+            background: #222;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        img{
+            max-width: 10%;
+            height: 10%;
+            border-radius: 5%;
+            display: block;
+            margin: 0 auto 1rem;
+            background-color: white;
+        }
+        ul{
+            list-style-type: square; 
+            padding-left: 2rem; 
+            color: #2a7ae2; 
+            font-size: 1.1rem;
+        }
+        li{
+            margin-bottom: 0.5rem;
+        }
+        div{
+            background:#f4f8fb; 
+            border-left: 5px solid #2a7ae2; 
+            padding:1rem 2rem; 
+            margin:2rem 0; 
+            max-width:400px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Barnes Design</h1>
+        <h1>Barnes Design <img src="https://cdn.iconscout.com/icon/free/png-256/free-abstract-icon-download-in-svg-png-gif-file-formats--geometric-polygon-eye-shape-pack-design-development-icons-69890.png" alt="brand logo"></h1>
         <p>Your Vision, Our Web Expertise</p>
     </header>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="service">
-                    <h3>Custom Web Design</h3>
-                    <p>Modern, responsive websites tailored to your brand and business goals.</p>
-                </div>
-                <div class="service">
-                    <h3>Website Redesign</h3>
-                    <p>Refresh your online presence with a new look and improved user experience.</p>
-                </div>
-                <div class="service">
-                    <h3>SEO Optimization</h3>
-                    <p>Boost your visibility and reach more customers with our SEO services.</p>
-                </div>
-            </div>
-        </section>
-        <section id="about" style="margin-top:2rem;">
-            <h2>About Barnes Design</h2>
-            <p>
-                Barnes Design is a creative web design company dedicated to helping businesses stand out online.
-                With a focus on clean design, usability, and results, we turn your ideas into engaging digital experiences.
-            </p>
-        </section>
-        <section id="contact" style="margin-top:2rem;">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required style="width:100%;padding:0.5rem;"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required style="width:100%;padding:0.5rem;"><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required style="width:100%;padding:0.5rem;"></textarea><br><br>
-                <button type="submit" style="padding:0.7rem 2rem;background:#222;color:#fff;border:none;border-radius:4px;cursor:pointer;">Send</button>
-            </form>
-        </section>
-    </div>
+    <main>
+        <h2>Barnes Design's Services</h2>
+        <p>
+            At Barnes Design, we blend creativity and technology to deliver stunning, user-focused websites that help your business thrive online. Our passionate team is dedicated to crafting digital experiences that are both beautiful and effective.
+        </p>
+        <ul>
+            <li>Award-winning design team</li>
+            <li>Fast project turnaround</li>
+            <li>Top-tier security practices</li>
+            <li>100% mobile responsive</li>
+            <li>Custom branding solutions</li>
+            <li>Free initial consultation</li>
+            <li>SEO & accessibility experts</li>
+            <li>Dedicated client support</li>
+            <li>Ongoing maintenance plans</li>
+        </ul>
+        <p>
+            We would love to help you elevate your online presence and achieve your business goals. Whether you need a brand new website or a redesign, Barnes Design is ready to bring your vision to life!
+        </p>
+        <div>
+            <strong>Contact Us:</strong><br>
+            Email: hello@thebarnesdesign.com<br>
+            Phone: (555) 123-4567<br>
+            Address: 123 Creative Ave, Suite 200, Charlotte, NC 28202
+        </div>        
+    </main>
     <footer>
         <p>Copyright ©2025</p>
     </footer>
