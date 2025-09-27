@@ -21,6 +21,22 @@ header a{
 
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.secondnav{
+    margin-top: 10px;
+    background-color: #87ccd8;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+.secondnav div{
+    background-color: rgb(53, 53, 152);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
 div:hover{
     transform: scale(1.1);
     transition: all 0.3s ease;
