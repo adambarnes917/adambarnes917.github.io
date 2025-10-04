@@ -103,6 +103,40 @@ footer a:visited, main a:visited{
     color: green;
     font-weight: bold;
 }
+table {
+      width: 90%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      justify-content: center;
+      margin: auto;
+    }
+
+    thead {
+      background: #333;
+      color: #fff;
+    }
+
+    thead th {
+      padding: 12px;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    tbody td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background: #eef6ff;
+    }
 @media screen and (min-width: 981px) and (max-width: 1400px){
     body{
         font-size: 18px;
