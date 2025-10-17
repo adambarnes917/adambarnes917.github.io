@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hobby — The Gym!</title>
+    <style>
+        /* Typography & CRAP: contrast, repetition, alignment, proximity */
+        :root{
+            --bg-1: #0f1720;    /* deep slate */
+            --bg-2: #0b3b4a;    /* teal-blue */
+            --accent: #ffb86b;  /* warm accent */
+            --muted: #b8d8d8;
+            --text: #e6f6f6;    /* not pure white */
+            --panel: #08232a;   /* darker panel */
+            --link: #ffd28a;    /* non-generic link color */
+        }
+        html,body{height:100%;margin:0}
+        body{
+            font-family: Inter, "Segoe UI", Roboto, Arial, system-ui, -apple-system;
+            background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+            color:var(--text);
+            line-height:1.45;
+            padding:24px;
+            box-sizing:border-box;
+        }
+
+        /* Page container */
+        .wrap{
+            max-width:1000px;
+            margin:0 auto;
+            background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+            border-radius:12px;
+            box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+            overflow:hidden;
+        }
+
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+            padding:18px 24px;
+            background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+            border-bottom:1px solid rgba(255,255,255,0.03);
+        }
+
+        header .heading{
+            margin:0;
+            font-size:1.2rem;
+            letter-spacing:0.6px;
+            color:var(--accent);
+        }
+
+        /* Nav: visually distinct, consistent styling */
+        nav{
+            display:flex;
+            gap:10px;
+            font-weight:600;
+        }
+
+        nav a{
+            color:var(--muted);
+            text-decoration:none;
+            padding:8px 12px;
+            border-radius:8px;
+            transition:all .18s ease;
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+        }
+
+        
+
+        nav a:hover{
+            background:rgba(255,255,255,0.02);
+            color:var(--text);
+            transform:translateY(-2px);
+        }
+        nav a[aria-current="true"]{
+            background:linear-gradient(90deg, rgba(255,184,107,0.12), rgba(255,184,107,0.06));
+            color:var(--accent);
+            box-shadow:0 4px 18px rgba(0,0,0,0.5) inset;
+        }
+
+        main{
+            padding:28px;
+            display:block;
+        }
+
+        section{
+            display:none;
+            animation:fade .2s ease both;
+        }
+        .active{display:block}
+
+        @keyframes fade{from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none}}
+
+        h2{
+            color:var(--link);
+            margin-top:0;
+        }
+
+        p, li, table { color: #dff3f2; } /* not plain black */
+
+        /* Figures and images */
+        figure{
+            margin:16px 0;
+            background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(0,0,0,0.03));
+            padding:12px;
+            border-radius:8px;
+            border:1px solid rgba(255,255,255,0.02);
+        }
+        figure img{
+            display:block;
+            width:60%;
+            max-width:760px;
+            height:auto;
+            top: 300px;
+            max-height:320px; /* resize large images & preserve aspect */
+            object-fit: cover;
+            object-position: 0% 35%; /* focus on subject */
+            border-radius:6px;
+        }
+        figcaption{
+            margin-top:8px;
+            font-size:0.9rem;
+            color:var(--muted);
+        }
+
+        /* lists, tables, forms */
+        ul{ padding-left:1.25rem }
+        table{
+            border-collapse:collapse;
+            width:100%;
+            max-width:600px;
+            background:rgba(255,255,255,0.01);
+            border-radius:6px;
+            overflow:hidden;
+            margin-top:12px;
+        }
+        th,td{
+            padding:8px 10px;
+            border-bottom:1px solid rgba(255,255,255,0.03);
+            text-align:left;
+            font-size:0.95rem;
+        }
+        th{ color:var(--accent); background:rgba(255,184,107,0.03) }
+
+        form{
+            margin-top:12px;
+            display:flex;
+            flex-direction:column;
+            gap:8px;
+            max-width:420px;
+        }
+        input[type="text"], textarea, select{
+            background:var(--panel);
+            border:1px solid rgba(255,255,255,0.03);
+            padding:8px 10px;
+            border-radius:6px;
+            color:var(--text);
+            resize:vertical;
+        }
+        button{
+            background:var(--accent);
+            color:var(--bg-1);
+            padding:8px 12px;
+            border-radius:8px;
+            font-weight:700;
+            cursor:pointer;
+        }
+
+        footer{
+            padding:18px 24px;
+            font-size:0.9rem;
+            color:var(--muted);            
+            border-top:1px solid rgba(255,255,255,0.02);
+        }
+        footer a{ color:var(--link); text-decoration:none; }
+
+        /* responsive */
+        @media (max-width:720px){
+            header{flex-direction:column;align-items:stretch}
+            nav{flex-wrap:wrap}
+            .slideshow{overflow-x:auto}
+        }
+    </style>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrap" role="document">
+        <header>
+            <h1 class="heading">My Hobby — The Gym!</h1>
+            <nav aria-label="Primary">
+                <a href="#what" data-section="what" aria-current="true">★ What</a>
+                <a href="#who" data-section="who">★ Who</a>
+                <a href="#when" data-section="when">★ When</a>
+                <a href="#where" data-section="where">★ Where</a>
+                <a href="#how" data-section="how">★ How</a>
+                <a href="#why" data-section="why">★ Why</a>
+                <a href="#ai" data-section="ai">★ AI Prompts</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- What (Home) - default visible -->
+            <section id="what" class="active" aria-labelledby="what-h">
+                <h2 id="what-h">What is Lifting?</h2>
+                <p>Lifting is a hobby that I have picked up over the past few years. It started when I was in highschool working out 
+                    with the basketball team, and has since become a regular part of my own daily routine.
+                </p>
+
+                <ul>
+                    <li>Benefits: Going to the gym helps me stay fit and active. It improves my strength and confidence as well.</li>
+                    <li>Approaches: I do exercises with freeweights (dumbells) and machines, as well as bodyweight exercises like pull ups.</li>
+                    <li>Consistency is the most efficient way to keep steady progress when it comes to lifting weights.</li>
+                </ul>
+
+                <figure>
+                    <img src="images/Gym_wiki-min.jpg" alt="Gym equipment, photorealistic">
+                    <figcaption>Typical gym & equipment.</figcaption>
+                </figure>
+            </section>
+
+            <!-- Who -->
+            <section id="who" aria-labelledby="who-h">
+                <h2 id="who-h">About Me</h2>
+                <p>I've been going to the gym since freshmam/sophomore year of high school, and I believe it has become a bit of my identity.
+                    I primarily focus on building muscle, which includes both lifting consistently and eating enough protein to support growth.
+                    This hobby has helped me build discipline and a routine that I enjoy.
+                </p>
+
+                <ul>
+                    <li>Experience: 5/6 years with varied programs.</li>
+                    <li>Focus: balance of strength and mobility.</li>
+                    <li>Community: I've met some of my best friends through the gym. Theres always someone else there who is going
+                         through the same journey as you.
+                    </li>
+                </ul>
+
+                <figure>
+                    <img src="images/me-min.jpg" alt="athlete portrait">
+                    <figcaption>Me (left) and my friend at the gym.</figcaption>
+                </figure>
+
+                <table aria-label="Quick profile">
+                    <thead><tr><th>Attribute</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>Experience</td><td>5+ years</td></tr>
+                        <tr><td>Primary Goal</td><td>Strength & health</td></tr>
+                        <tr><td>Favorite Lift</td><td>Preacher Curl</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- When -->
+            <section id="when" aria-labelledby="when-h">
+                <h2 id="when-h">My Schedule</h2>
+                <p>The timing of when I workout depends on what I need to get done that day and when I have free time. Also, I have a split that I follow each week. More details on my split are seen in the table below.</p>
+
+                <ol>
+                    <li>Early morning: I don't usually go early in the morning, as I like to sleep in and have class at 10am throughout the week.</li>
+                    <li>Lunch sessions: I usually go around 2:00/3:00 since that time works best for me after class. Also the gym isn't too crowded at this time.</li>
+                    <li>Evening: Sometimes when I lift with my friends I will go later in the day. Sometimes I even lift really late at night.</li>
+                </ol>
+
+                <figure>
+                    <img src="images/MEME43_Rooftop-Carousel-5.jpg" alt="Outdoor Gym in Charlotte">
+                    <figcaption>Outdoor Gym in Charlotte.</figcaption>
+                </figure>
+
+                <table aria-label="Sample weekly schedule">
+                    <thead><tr><th>Day</th><th>Focus</th></tr></thead>
+                    <tbody>
+                        <tr><td>Push</td><td>Targets: Chest, Triceps</td></tr>
+                        <tr><td>Pull</td><td>Targets: Back, Biceps</td></tr>
+                        <tr><td>Legs</td><td>Targets: Quads, Hamstrings, Calves, Glutes</td></tr>
+                        <tr><td>Other</td><td>Targets: Shoulders, Forearms, Traps</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Where -->
+            <section id="where" aria-labelledby="where-h">
+                <h2 id="where-h">Where I Lift</h2>
+                <p>I have been to many gyms, but the one that is most convenient for me is the Crunch fitness on University Blvd. It is massive and has 
+                    all the equipment I could ever need. Other gyms I have been to are listed below.</p>
+
+                <ul>
+                    <li>UREC: This gym is very nice and has all the different machines. However, when it gets crowded it makes it tough to finish workouts quickly.</li>
+                    <li>YMCA: I've been to a few different YMCA's and they are overall very good. The only downside for the YMCA is the expensive membership price.</li>
+                    <li>Anytime Fitness: I love this gym because I can go any time of the day. They are open 24/7. I don't have a membership though since it's far from
+                        where I live.</li>
+                </ul>
+
+                <figure>
+                    <img src="images/DSC01999web.jpg" alt="Crunch Fitness interior, photorealistic">
+                    <figcaption>The inside of a Crunch Fitness.</figcaption>
+                </figure>
+
+                <p>
+                    Overall, it doesn't matter where you lift as long as you are consistent and pushing yourself to improve. Any gym with basic equipment will do.
+                </p>
+            </section>
+
+            <!-- How -->
+            <section id="how" aria-labelledby="how-h">
+                <h2 id="how-h">Getting Started</h2>
+                <p>Start small and build habits. Focus on learning movements and having correct form. A big part of going to the gym is staying consistent,
+                     so having the discipline to go regularly is key.
+                </p>
+
+                <ol>
+                    <li>Pick a split, whether its Push Pull Legs, Upper Lower, or your own personalized split.</li>
+                    <li>Set a realistic training frequency.</li>
+                    <li>Track progress and adjust.</li>
+                </ol>
+
+                <figure>
+                    <img src="images/How-to-Schedule-Your-Weekly-Workout-Routine-scaled.jpg" alt="how to start">
+                    <figcaption>Working out multiple times a week can lead to huge gains.</figcaption>
+                </figure>
+
+                <form id="starter-plan" onsubmit="event.preventDefault(); alert('Starter plan created!');">
+                    <label for="goal">Main goal:</label>
+                    <select id="goal" name="goal">
+                        <option>Strength</option>
+                        <option>Size</option>
+                        <option>Health / Mobility</option>
+                    </select>
+                    <label for="weeks">Weeks to commit:</label>
+                    <input id="weeks" name="weeks" type="text" placeholder="e.g., 12">
+                    <button type="submit">Create Plan</button>
+                </form>
+            </section>
+
+            <!-- Why -->
+            <section id="why" aria-labelledby="why-h">
+                <h2 id="why-h">Purpose & Motivation</h2>
+                <p>The gym has been constant throughout my life. I will always have the ability to work out and push myself there. I use the gym as 
+                    a way to relieve stress from school and work, and it gives me a sense of accomplishment when I hit new personal records. When I don't feel
+                     like going, I remind myself of why I do it:
+                </p>
+
+                <ul>
+                    <li>Mental clarity and confidence.</li>
+                    <li>Physical resilience and longevity.</li>
+                    <li>Community and shared goals.</li>
+                </ul>
+
+                <figure>
+                    <img src="images/Muhammad-Ali-Black-White-HD-Wallpaper.jpg" alt="motivation">
+                    <figcaption>Muhammad Ali is known for his motivation and determination.</figcaption>
+                </figure>
+
+                <blockquote style="color:var(--muted);border-left:3px solid rgba(255,184,107,0.12);padding-left:12px">
+                    "You don't get what you wish for; you get what you work for."
+                </blockquote>
+            </section>
+
+            <!-- AI Prompts -->
+            <section id="ai" aria-labelledby="ai-h">
+                <h2 id="ai-h">AI Prompts / Notes</h2>
+                <p>I used Copilot for the following:</p>
+                <ul>
+                    <li>Creating a nice color scheme and making variables in CSS. Prompt: Give me a contrast friendly color scheme for my website.</li>
+                    <li>Figuring out how to navigate to different "pages" using JavaScript. Prompt: How can I make my webpage so that only the selected section is visible at one time.</li>
+                    <li>Some of the formatting for creating the form in the "How" section. Prompt: How do I implement a user text box in HTML</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div>Designed by <a href="../thebarnesdesign.com" target="_blank" rel="noopener">Barnes Design ©2025</a></div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple SPA-like section switching
+        (function(){
+            const navLinks = document.querySelectorAll('nav a[data-section]');
+            const sections = document.querySelectorAll('main section');
+
+            function show(id){
+                sections.forEach((s) => s.classList.toggle('active', s.id === id));
+                navLinks.forEach((a) => a.setAttribute('aria-current', a.dataset.section === id ? 'true' : 'false'));
+                // update location hash without scrolling
+                history.replaceState(null, '', '#'+id);
+            }
+
+            navLinks.forEach((a) => {
+                a.addEventListener('click', function(e){
+                    e.preventDefault();
+                    show(this.dataset.section);
+                });
+            });
+
+            // default to 'what' if no hash or unknown
+            const initial = (location.hash && document.getElementById(location.hash.slice(1))) ? location.hash.slice(1) : 'what';
+            show(initial);
+        })();
+    </script>
+</body>
+</html>
