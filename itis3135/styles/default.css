@@ -40,7 +40,7 @@ header a{
     padding: 5px 10px;
     border-radius: 3px;
 }
-div:hover{
+header div:hover{
     transform: scale(1.1);
     transition: all 0.3s ease;
 
@@ -170,4 +170,66 @@ table {
     img{
         max-width: 100%;
     }
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+form div{
+    margin-bottom: 15px;
+    width: 75%;
+}
+#add-course,#remove-course {
+    background-color: aquamarine;
+    color: charcoal;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+#remove-course{
+    float: right;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #87ccd8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+fieldset {
+    border: 1px solid #ccc; /* Add a border for visibility */
+    padding: 10px; /* Add padding for better spacing */
+    border-radius: 5px; /* Add rounded corners */
+}
+legend{
+    font-weight: bold;
+    padding: 0 5px;
+    font-size: 1.5em;
+}
+.active{
+    display: block;
+}
+.inactive{
+    display: none;
 }

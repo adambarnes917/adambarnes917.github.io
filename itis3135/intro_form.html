@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adam Barnes | ITIS 3135 | Introduction Form</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <script src="scripts/introduction.js" defer></script>
+</head>
+<body>
+  <header id="header">
+    <div data-include="components/header.html"></div>
+  </header>
+  <main>
+    <h2>Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
+
+    <form id="introForm">
+  <fieldset>
+    <legend>Basic Info</legend>
+    <label>First Name: <input type="text" name="firstName" value="Adam" required></label><br>
+    <label>Middle Name: <input type="text" name="middleName" placeholder="Optional"></label><br>
+    <label>Nickname: <input type="text" name="nickname" placeholder="Optional"></label><br>
+    <label>Last Name: <input type="text" name="lastName" value="Barnes" required></label><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Acknowledgment</legend>
+    <label>Statement: <input type="text" name="acknowledge" value="I acknowledge that any information I post on here will be public." required></label><br>
+    <label>Date: <input type="text" name="ackDate" value="2025-08-23" required></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Mascot</legend>
+    <label>Mascot Adjective: <input type="text" name="mascotAdj" value="Angelic" required></label><br>
+    <label>Mascot Animal: <input type="text" name="mascotAnimal" value="Bear" required></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Image</legend>
+    <label>Upload Picture: <input type="file" id="photo" name="photo" accept="image/*"></label><br>
+    <img id="previewImage" src="images/image-from-iOS.jpg" alt="Picture of me with my siblings in SF" width="250"><br>
+    <label>Caption: <input type="text" name="caption" value="Me with my siblings in San Francisco." required></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Personal Statement</legend>
+    <textarea name="statement" rows="4" required>I’m in my 2nd year at UNCC and I am majoring in computer science with a concentration in software engineering...</textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Main Bullets</legend>
+    <label>Personal Background: <textarea name="personal" required>I was born and raised in Charlotte, North Carolina...</textarea></label><br>
+    <label>Professional Background: <textarea name="professional" required>I worked for a couple of years at an indoor pool...</textarea></label><br>
+    <label>Academic Background: <textarea name="academic" required>I’m in my second year but am classified as a Junior...</textarea></label><br>
+    <label>Primary Computer: <textarea name="computer" required>Lenovo, Windows 11, Laptop, my room</textarea></label><br>
+  </fieldset>
+
+  <fieldset id="courses">
+    <legend>Courses</legend>
+    <div class="course">
+      <label>Department: <input type="text" name="dept" value="ITIS" required></label>
+      <label>Course Number: <input type="text" name="num" value="3135" required></label>
+      <label>Course Name: <input type="text" name="name" value="Front-End Web App Development" required></label>
+      <label>Reason: <input type="text" name="reason" value="I wanted to understand the behind the scenes of web development" required></label>
+    </div>
+  </fieldset>
+  <button type="button" id="addCourse">Add Course</button><br><br>
+
+  <fieldset>
+    <legend>Quote</legend>
+    <label>Quote: <input name="quote" value="I’d rather go 0 for 30 than 0 for 9 because if you go 0 for 9 that means you stopped shooting. That means you lost confidence." placeholder="Enter your favorite quote" required></label><br>
+    <label>Author: <input type="text" name="quoteAuthor" value="Dion Waiters" placeholder="Author's name" required></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Extra Info</legend>
+    <label>Funny Thing (optional): <textarea name="funny" placeholder="Something funny about you"></textarea></label><br>
+    <label>Something I’d Like to Share (optional): <textarea name="share" placeholder="Something interesting you’d like to share"></textarea></label>
+  </fieldset>
+
+  <fieldset id="links">
+    <legend>Links</legend>
+    <p>Enter up to 5 links (LinkedIn, GitHub, etc.):</p>
+    <input type="url" name="link1" value="https://webpages.charlotte.edu/abarne94/" placeholder="https://example.com"><br>
+    <input type="url" name="link2" value="https://github.com/adambarnes917" placeholder="https://example.com"><br>
+    <input type="url" name="link3" value="https://www.freecodecamp.org/adambarnes" placeholder="https://example.com"><br>
+    <input type="url" name="link4" value="https://www.codecademy.com/profiles/adambarnes917" placeholder="https://example.com"><br>
+    <input type="url" name="link5" value="https://www.linkedin.com/in/adam-barnes-7a78a9327/" placeholder="https://example.com"><br>
+  </fieldset>
+
+  <br>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button" id="clearBtn">Clear</button>
+</form>
+
+  </main>
+  <footer id="footer">
+    <div data-include="components/footer.html"></div>
+  </footer>
+  <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
