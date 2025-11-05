@@ -52,6 +52,150 @@
         <p><strong>Organization/Institute/Business:</strong> Student at UNC Charlotte</p>
         <p><strong>Email Address: </strong>bsaund12@charlotte.edu</p>
         <p><strong>Phone Number:</strong> [Private]</p>
+        <h3>Site Map</h3>
+        <figure>
+            <img class="client" src="images/website-map.drawio.png" alt="Site Map for Club Basketball Team Website">
+            <figcaption>Site Map for Club Basketball Team Website</figcaption>
+        </figure>
+        <h3>Site Layout</h3>
+        <figure>
+            <img class="client" src="images/website-layout.drawio.png" alt="Layout Design for Club Basketball Team Website">
+            <figcaption>Layout Design for Club Basketball Team Website</figcaption>
+        </figure>
+        <h3>Home page (Welcome)</h3>
+        <p>
+            <strong>Purpose: </strong>Welcome visitors and announce team information.
+        </p>
+        <p>
+            <strong>Audience: </strong>Everyone interested in the club basketball team. Fans, players, coaches, and community members.
+        </p>
+        <p>
+            <strong>Page Content: </strong>
+        </p>
+        <ul>
+            <li>
+                <p>Hero section - Banner</p>
+            </li>
+            <li>
+                <p>Short text introducing the idea of the team</p>
+            </li>
+            <li>
+                <p>Call to action buttons - "Join Now", "Learn More"</p>
+            </li>
+            <li>
+                <p>News slider</p>
+            </li>
+        </ul>
+        <p>
+            <strong>Does the user enter data? (Yes/No): </strong> No
+        </p>
+        <p>
+            <strong>Does data need validations? (Yes/No): </strong> No
+        </p>
+        <p>
+            <strong>Does the page contain buttons, hyperlinks or dropdowns? (Yes/No): </strong>Yes, navigation links and call to action buttons.
+        </p>
+        <p>
+            <strong>What actions will happen on this page?: </strong>Users can navigate to other pages, there will also be a news slider will scroll through news.
+        </p>
+        <p>
+            <strong>Special Notes: </strong>jQuery UI will be used for the news slider functionality.
+        </p>
+        <h3>About</h3>
+        <p>
+            <strong>Purpose: </strong>Explain the team's goals, mission and values.
+        </p>
+        <p>
+            <strong>Audience: </strong>Anyone interested in learning more about the team.
+        </p>
+        <p><strong>Page Content: </strong></p>
+        <ul>
+            <li>    
+                <p>Text explaining more about the team</p>
+            </li>
+            <li>
+                <p>Images about the goals we wish to accomplish</p>
+            </li>
+            <li>
+                <p>Founder of the club</p>
+            </li>
+        </ul>
+        <p>
+            <strong>Does the user enter data? (Yes/No): </strong> No
+        </p>
+        <p>
+            <strong>Does data need validations? (Yes/No): </strong> No
+        </p>
+        <p>
+            <strong>Does the page contain buttons, hyperlinks or dropdowns? (Yes/No): </strong> Yes, navigation links.
+        </p>
+        <p>
+            <strong>What actions will happen on this page?: </strong> Users can navigate to other pages.
+        </p>
+        <p>
+            <strong>Special Notes: </strong> Fade in animations will be used for images and text as the user scrolls down the page.
+        </p>
+        
+        <h2>Tryouts</h2>
+        <p><strong>Purpose:</strong> Provide information about upcoming tryouts and allow users to register their interest in joining the team.</p>
+        <p>
+        <strong>Audience:</strong> Prospective players interested in trying out for the club basketball team.
+        </p>
+        <p><strong>Page Content:</strong></p>
+        <ul>
+          <li>Tryout details: date(s), time(s), location, what to bring.</li>
+          <li>Eligibility and requirements (age groups, experience level, waiver info).</li>
+          <li>Registration form for players to sign up (name, email, phone, age, preferred position, emergency contact).</li>
+        </ul>
+
+        <p><strong>Does the user enter data? (Yes/No):</strong> Yes</p>
+        <p><strong>Does data need validations? (Yes/No):</strong> Yes — required fields: name, email, age; email format validation; optional phone format checks and numeric / range validation for age.</p>
+        <p><strong>Does the page contain buttons, hyperlinks or dropdowns? (Yes/No):</strong> Yes — form submission button, navigation links, and possibly dropdowns for position/age group.</p>
+
+        <p><strong>What actions will happen on this page?:</strong> On submit, JavaScript/jQuery will validate inputs. If valid, the data will be sent via AJAX to a mock endpoint or stored locally (for demo). A confirmation message or modal popup will appear after successful submission. Error messages will show inline for missing/invalid fields.</p>
+
+        <p><strong>Special Notes:</strong> Use client-side validation with helpful error text. Consider adding a CAPTCHA or honeypot field if spam is a concern. For the project demo, AJAX can post to a placeholder URL (or simulate success with setTimeout).</p>
+        
+        <h2>Gallery</h2>
+        <p><strong>Purpose:</strong> Showcase team photos, highlight events, and provide a visual connection with the community.</p>
+        <p>
+        <strong>Audience:</strong> Fans, players, coaches, and community members interested in seeing team activities.
+        </p>
+        <p><strong>Page Content:</strong></p>
+        <ul>
+        <li>Image grid with placeholder photos to be replaced as events happen.</li>
+        <li>Captions or short descriptions for each image (date/event).</li>
+        <li>Optional embedded video highlights area (for future use).</li>
+        </ul>
+
+        <p><strong>Does the user enter data? (Yes/No):</strong> No</p>
+        <p><strong>Does data need validations? (Yes/No):</strong> No</p>
+        <p><strong>Does the page contain buttons, hyperlinks or dropdowns? (Yes/No):</strong> Yes — navigation links and clickable images that open in a lightbox.</p>
+
+        <p><strong>What actions will happen on this page?:</strong> Clicking an image will open a lightbox gallery (e.g., a jQuery lightbox plugin) where users can navigate between images. Videos, when added, can open in a modal or embed player.</p>
+
+        <p><strong>Special Notes:</strong> Use a jQuery lightbox or similar plugin for a polished viewing experience. Optimize images for web (use thumbnails for the grid and full-size for the lightbox).</p>
+    
+        <h2>Contact</h2>
+        <p><strong>Purpose:</strong> Allow interested players, coaches, and community members to reach out to the club for questions, support, or sponsorships.</p>
+        <p>
+        <strong>Audience:</strong> Prospective players, coaches, sponsors, and community members wanting to connect with the club.
+        </p>
+        <p><strong>Page Content:</strong></p>
+        <ul>
+        <li>Contact form with: name, email, phone (optional), message, and subject (e.g., "Player Interest", "Coaching", "Sponsorship").</li>
+        <li>Club email address and social media links (Twitter/Instagram/Facebook as available).</li>
+        <li>Embedded map (iframe) showing the meeting / tryout location (placeholder until venue confirmed).</li>
+        </ul>
+
+        <p><strong>Does the user enter data? (Yes/No):</strong> Yes</p>
+        <p><strong>Does data need validations? (Yes/No):</strong> Yes — all required fields must be filled; email must be validated for proper format; message should have a minimum length (optional).</p>
+        <p><strong>Does the page contain buttons, hyperlinks or dropdowns? (Yes/No):</strong> Yes — form submit button, social links, and navigation links.</p>
+
+        <p><strong>What actions will happen on this page?:</strong> When the form is submitted, JavaScript/jQuery will validate inputs then send them via AJAX to a contact endpoint (or simulate with a success message). On success, show a thank-you modal or inline confirmation and optionally clear the form. Map iframe is static and provides location context.</p>
+
+        <p><strong>Special Notes:</strong> Use accessible form markup (labels tied to inputs). Consider server-side backup of contact messages in a real deployment; for the project, a simulated AJAX response is sufficient. Include privacy note if saving contact info.</p>
+    
     </main>
     <footer>
         <div data-include="components/footer.html"></div>  

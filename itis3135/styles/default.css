@@ -217,6 +217,11 @@ label {
     margin-top: 10px;
 }
 
+.client{
+    max-width: 100%;
+    height: auto;
+}
+
 fieldset {
     border: 1px solid #ccc; /* Add a border for visibility */
     padding: 10px; /* Add padding for better spacing */
