@@ -89,6 +89,11 @@ img{
     margin-right: auto;
     border-radius: 10px;
 }
+.review{
+    max-width: 80%;
+    height: auto;
+    
+}
 figcaption{
     text-align: center;
     font-style: italic;
