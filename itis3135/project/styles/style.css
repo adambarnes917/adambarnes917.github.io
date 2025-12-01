@@ -36,7 +36,7 @@ main{
     text-decoration: none;
 }
 
-.nav a.active {
+.active {
     border-bottom: 2px solid #f39c12;
 }
 
@@ -63,7 +63,7 @@ footer a{
 }
 
 form {
-    width: 60%;
+    max-width: 400px;
     margin: 30px auto;
     background: #07393C;
     padding: 25px 35px;
@@ -138,14 +138,13 @@ form button:active {
     color: #F6F4D2;
 }
 
-.gallery-grid {
+.gallery-griddy {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+    
 }
+
 
 .gallery-item {
     background: #fff;
@@ -185,7 +184,7 @@ form button:active {
     box-shadow: 0 3px 12px rgba(0,0,0,0.15);
 }
 
-.contact-container h2 {
+.contact-container {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -198,7 +197,7 @@ form button:active {
 
 .contact-container input,
 .contact-container textarea {
-    width: 100%;
+    
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 6px;
@@ -214,7 +213,7 @@ form button:active {
 }
 
 .contact-btn {
-    width: 100%;
+    
     padding: 14px;
     background-color: #0066ff;
     border: none;
@@ -228,3 +227,43 @@ form button:active {
 .contact-btn:hover {
     background-color: #004bcc;
 }
+
+/* LIGHTBOX STYLES */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    z-index: 9999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: fadeInScale 0.25s ease-out;
+}
+
+/* Slight animation */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Make gallery images clickable */
+.gallery-img {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+}
+

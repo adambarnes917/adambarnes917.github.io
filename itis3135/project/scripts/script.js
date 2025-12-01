@@ -3,7 +3,7 @@
   const items = document.querySelectorAll(".news-item");
   if (!items.length) return;
   let idx = 0;
-  items.forEach(i => i.style.display = "none");
+  items.forEach((i) => i.style.display = "none");
   items[0].style.display = "block";
   setInterval(() => {
     items[idx].style.display = "none";
@@ -32,18 +32,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
   if (!btn) return;
 
+
+// small helper to prevent XSS in inserted text
+function escapeHtml(str) {
+  if (typeof str !== "string") return str;
+  return str.replace(/[&<>"']/g, function(m) {
+    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m];
+  });
+}
+
   btn.addEventListener("click", function() {
     out.innerHTML = "Loading schedule...";
     err.textContent = "";
 
     fetch("data/schedule.json", { cache: "no-store" })
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not OK (status " + response.status + ")");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         // Accept either an array or an object with "games" key
         let list = [];
         if (Array.isArray(data)) {
@@ -70,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         </tr>
                       </thead>
                       <tbody>`;
-        list.forEach(item => {
+        list.forEach((item) => {
           const date = item.date || item.day || "TBD";
           const time = item.time || item.start || "TBD";
           const event = item.event || item.title || item.opponent || "Practice";
@@ -85,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
         html += `</tbody></table>`;
         out.innerHTML = html;
       })
-      .catch(fetchErr => {
+      .catch((fetchErr) => {
         console.error(fetchErr);
         out.innerHTML = "";
         err.textContent = "Could not load schedule: " + fetchErr.message + ". Check console for details.";
@@ -93,10 +102,29 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// small helper to prevent XSS in inserted text
-function escapeHtml(str) {
-  if (typeof str !== "string") return str;
-  return str.replace(/[&<>"']/g, function(m) {
-    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m];
-  });
-}
+
+
+// Simple Lightbox
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+// Open lightbox when any gallery image is clicked
+document.querySelectorAll(".gallery-img").forEach((img) => {
+    img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+    });
+});
+
+// Close lightbox on click
+lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+// Close with ESC key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        lightbox.style.display = "none";
+    }
+});
